@@ -22,4 +22,4 @@ export function bubbleSort(arr) {
 // Omega (N^2) -> after the improvement O(N)
 
 // Space: 
-// Theta O(1)
+// Theta(1)

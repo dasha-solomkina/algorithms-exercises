@@ -11,17 +11,14 @@ export function selectionSort(arr){
             arr[i] = arr[currentMinIndex]
             arr[currentMinIndex] = temp
         }
-    
     }
-
-
     return arr
 }
 
 
 // Time:
 // Big O(N^2)
-// Theta O(N^2)
+// Theta(N^2)
 
 // Space:
-// Theta O(1)
+// Theta(1)
