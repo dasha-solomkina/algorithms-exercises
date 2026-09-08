@@ -125,32 +125,24 @@
 
 
 // Task 8.
-function flatten(arr) {
-    const answer = []
+// function flatten(arr) {
+//     const answer = []
 
-    for (let i = 0; i < arr.length; i++) {
-        if(typeof arr[i] != 'object') {
-            answer.push(arr[i])
-        } else {
-            answer.push( ...flatten(arr[i]))
-        }
-    }
+//     for (let i = 0; i < arr.length; i++) {
+//         if(typeof arr[i] != 'object') {
+//             answer.push(arr[i])
+//         } else {
+//             answer.push( ...flatten(arr[i]))
+//         }
+//     }
 
-    return answer
-} 
+//     return answer
+// } 
 
-const test1 = [1, [2, [3]], 4]
-const test2 = [[[1]], [2, [3, [4, 5]]]]
-const test3 = [1, 2, 3]
-const test4 = [[], [[]], 1]
+// const test = [1, [2, [3]], 4]
 
-const output = flatten(test4)
-console.log({output})
-
-
-
-
-
+// const output = flatten(test)
+// console.log({output})
 
 
 
@@ -178,13 +170,49 @@ console.log({output})
 // console.log(output)
 
 // Task 9.2 binarySearch(arr, target, left, right)
-// function binarySearch(arr, target, left = 0, right = arr.length - 1) {
+function binarySearch(arr, target, left = 0, right = arr.length - 1) {
+    const middle = Math.floor((left + right) / 2)
     
-//     // TODO 
-// }
+    if (arr[middle] === target) return middle
+    if (left > right) return -1
 
-// const output = binarySearch([1, 5, 7, 9], 9)
-// console.log(output)
+    if (arr[middle] > target) {
+        return binarySearch(arr, target, left, right = middle - 1)
+    } else {
+        return binarySearch(arr, target, left = middle + 1, right)
+    }
+}
+
+
+
+
+
+const break1 = binarySearch([10, 20, 30, 40, 50, 60, 70, 80, 90, 100], 60);
+console.log("Break 1:", break1); // Expected: 5
+
+const break2 = binarySearch([], 5);
+console.log("Break 2:", break2); // Expected: -1
+
+const break3 = binarySearch([1, 2, 3, 20, 30, 40, 50], 25);
+console.log("Break 3:", break3); // Expected: -1
+
+
+// Test 1 (Expected output: 3)
+const test1 = binarySearch([1, 3, 5, 7, 9], 7);
+console.log("Test 1:", test1);
+
+
+// Test 2 (Expected output: -1)
+const test2 = binarySearch([1, 3, 5, 7, 9], 4);
+console.log("Test 2:", test2);
+
+// Test 3 (Expected output: 0)
+const test3 = binarySearch([2, 4, 6, 8, 10, 12], 2);
+console.log("Test 3:", test3);
+
+// Test 4 (Expected output: -1)
+const test4 = binarySearch([1, 2, 3], 10);
+console.log("Test 4:", test4);
 
 
 
