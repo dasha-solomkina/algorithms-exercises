@@ -1,8 +1,8 @@
 // tests.js
 // import { bubbleSort } from './bubble.js';
 // import { selectionSort } from './selection.js';
-import { insertionSort } from './insertion.js';
-// import { mergeSort } from './merge.js';
+// import { insertionSort } from './insertion.js';
+import { mergeSort } from './merge.js';
 
 function isSorted(arr) {
   for (let i = 0; i < arr.length - 1; i++) {
@@ -62,5 +62,5 @@ function runTests(name, sortFn) {
 // Execute tests
 // runTests("Bubble Sort", bubbleSort);
 // runTests("Selection Sort", selectionSort);
-runTests("Insertion Sort", insertionSort);
-// runTests("Merge Sort", mergeSort);
+// runTests("Insertion Sort", insertionSort);
+runTests("Merge Sort", mergeSort);

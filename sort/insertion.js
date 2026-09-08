@@ -3,7 +3,7 @@ export function insertionSort(arr) {
         const currentValue = arr[i]; 
         let j = i - 1
 
-        while (arr[j] > currentValue) { 
+        while (j >= 0 && arr[j] > currentValue) { 
             arr[j + 1] = arr[j]
             j--
         }
@@ -12,6 +12,8 @@ export function insertionSort(arr) {
     }
     return arr
 }
+
+[5, 2, 1, 0]
 
 
 // Time: 
