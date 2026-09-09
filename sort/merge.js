@@ -2,26 +2,34 @@ export function mergeSort(arr) {
 
     if (arr.length <= 1) return arr
 
-    const left = arr.slice(0, Math.floor(arr.length / 2))
-    const right = arr.slice(Math.floor(arr.length / 2))
+    const middle = Math.floor(arr.length / 2)
+    const left = mergeSort(arr.slice(0, middle))
+    const right = mergeSort(arr.slice(middle))
 
-    console.log({left})
-    console.log({right})
+    let i = 0
+    let j = 0
 
-    if (mergeSort(left) > mergeSort(right)) {
-        console.log("return", [right, left])
-        return right, left  
-    } 
-    else {
-        console.log("return else", [left, right])
+    const answer = []
 
-        return left, right
+    while(i < left.length && j < right.length) {
+        if(left[i] > right[j]) {
+            answer.push(right[j])
+            j++
+        } else {
+            answer.push(left[i])
+            i++
+        }
     }
 
-    console.log({arr})
+    answer.push(...right.slice(j))
+    answer.push(...left.slice(i))
+
+    return answer
 }
 
-const testArray = [4, 5, 3,2, 1]
-// const testArray = [5, 4]
+// Time
+// Big O(N log N)
+// Theta (N log N)
 
-mergeSort(testArray)
+// Space
+// Big O(N)
