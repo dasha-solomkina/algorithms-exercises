@@ -9,6 +9,9 @@
 // }
 // countdowntoZero(3)
 
+// Time: Big O(n)
+// Space: Big O(n)
+
 
 // Task 2
 // function factorial(n) {
@@ -19,6 +22,9 @@
 
 // const output = factorial(4)
 // console.log(output)
+
+// Time: Big O(n)
+// Space: Big O(n)
 
 
 // Task 3
@@ -31,16 +37,22 @@
 // const output = sumRange(5)
 // console.log(output)
 
+// Time: Big O(n)
+// Space: Big O(n)
+
 
 // Task 4
 // function sumArray(arr) {
 //     if (arr.length < 1) return 0
 
-//     return arr[0] + sumArray(arr.slice(1))
+//     return arr[0] + sumArray(arr.slice(1)) // (n-1) * (n-2) * ...
 // }
 
 // const output = sumArray([10, 20, 30, 40, 50])
 // console.log(output)
+
+// Time: Big O(nˆ2)
+// Space: Big O(nˆ2)
 
 
 // Task 5
@@ -53,6 +65,8 @@
 // const output = reverseString("hello")
 // console.log(output)
 
+// Time: Big O(nˆ2)
+// Space: Big O(nˆ2)
 
 // Task 6.1
 // function countOccurrences(arr, target) {
@@ -67,6 +81,9 @@
 
 // const output = countOccurrences([1, 2, 1, 3, 5], 1)
 // console.log(output)
+
+// Time: Big O(nˆ2)
+// Space: Big O(nˆ2)
 
 // Task 6.2
 // function countOccurrences(arr, target) {
@@ -93,6 +110,9 @@
 // const output = countOccurrences([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 5], 1)
 // console.log(output)
 
+// Time: Big O(n)
+// Space: Big O(n)
+
 // Task 6.3
 // function countOccurrences(arr, target, i = arr.length) {
 
@@ -110,6 +130,9 @@
 // const output = countOccurrences([ 1, 1, 1, 1, 1, 4, 6, 5], 6)
 // console.log(output)
 
+// Time: Big O(n)
+// Space: Big O(n)
+
 
 // Task 7
 // function fibonacci(n) {
@@ -122,7 +145,8 @@
 // const output = fibonacci(6)
 // console.log(output)
 
-
+// Time: Big O(2ˆn)
+// Space: Big O(n)
 
 // Task 8.
 // function flatten(arr) {
@@ -138,6 +162,9 @@
 
 //     return answer
 // } 
+
+// Time: Big O(nˆ2) (if I had an inner function that was NOT spreading the array inside push -> O(N))
+// Space: Big O(n)
 
 // const test = [1, [2, [3]], 4]
 
@@ -166,8 +193,10 @@
 //     }
 // }
 
+
 // const output = binarySearch([1, 5, 7, 9], 9)
 // console.log(output)
+
 
 // Task 9.2 binarySearch(arr, target, left, right)
 // function binarySearch(arr, target, left = 0, right = arr.length - 1) {
@@ -183,6 +212,9 @@
 //     }
 // }
 
+
+// Time: Big O(log N)
+// Space: Big O(log N)
 
 
 // Task 10.1 Merge Sort - Naive
@@ -283,3 +315,7 @@ function merge(arr) {
 // Test 1: Standard unsorted array (Expected: [1, 2, 3, 4, 7])
 // const test1 = merge([4, 2, 7, 1, 3]);
 // console.log("Test 1:", test1);
+
+
+// Time: Big O(N * log N)
+// Space: Big O(N)
